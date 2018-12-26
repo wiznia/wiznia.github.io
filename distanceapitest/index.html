@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+</head>
+<title>Distance API test</title>
+<body>
+  <div class="container">
+    <div class="step active">
+      <label class="label" for="address">Where do you live?</label>
+      <input type="text" class="input"  id="address" name="address" placeholder="" />
+      <small>Press Enter to continue</small>
+    </div>
+    <div class="step">
+      <label class="label" for="destination">Where do you want to go?</label>
+      <input type="text" class="input" id="destination" name="destination" placeholder="" />
+      <small>Press Enter to continue</small>
+    </div>
+    <div class="step">
+      <label class="label" for="time">At what time do you want to arrive at your destination?</label>
+      <input type="time" class="input" name="time" />
+      <small>Press Enter to continue</small>
+    </div>
+    <div class="step">
+      <label class="label">How do you commute?</label>
+      <select class="input">
+        <option value="driving">Driving</option>
+        <option value="walking">Walking</option>
+        <option value="bicycling">Bicycling</option>
+        <option value="transit">Public Transportation</option>
+      </select>
+      <small>Press Enter to continue</small>
+    </div>
+    <div class="step">
+      <label class="label">Do you have breakfast before leaving?</label>
+      <select class="input">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <small>Press Enter to continue</small>
+    </div>
+    <div class="step">
+      <label class="label">Do you shower before leaving?</label>
+      <select class="input">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <small>Press Enter to continue</small>
+    </div>
+    <div class="step">
+      <button>Calculate!</button>
+      <div class="result"></div>
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW37KrdmWuXJ6GciydzPExkhR2CErAs5I&libraries=places&callback=initAutocomplete" async defer></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>

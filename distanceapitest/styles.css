@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5c80ea;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3.125rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 80%;
+}
+
+input, select {
+  background-color: transparent;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 3px solid #fff;
+  width: 100%;
+  font-size: 6.25rem;
+  color: #fff;
+}
+
+select {
+  font-size: 3.125rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+.label {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+small {
+  font-size: .875rem;
+  margin-top: .625rem;
+}
+
+button {
+  background-color: #6b92fb;
+  border: 0;
+  border-radius: .3125rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.5625rem;
+  color: #fff;
+  text-transform: uppercase;
+  padding: .3125rem 1.25rem;
+  width: 13.75rem;
+  height: 4.375rem;
+}
+
+.step {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 150ms ease;
+}
+
+.step.active {
+  width: auto;
+  height: 100vh;
+}
+
+.result {
+  margin-top: 1.25rem;
+}

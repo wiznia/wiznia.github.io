@@ -45,7 +45,7 @@
   }
 
   var calculateTime = function(options) {
-    fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${options[0]}&destinations=${options[1]}&mode=${options[2]}&key=AIzaSyCJpw-LH82RevpaarbB3PW4qoWEAR9xauU`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${options[0]}&destinations=${options[1]}&mode=${options[3]}&key=AIzaSyCJpw-LH82RevpaarbB3PW4qoWEAR9xauU`)
       .then((res) => {
         return res.json();
       })
@@ -53,9 +53,15 @@
         if (json.status === 'INVALID_REQUEST') {
           document.querySelector('.result').innerHTML = 'You must provide a valid address and destination';
         } else {
-          const minutesToDestination = json.rows[0].elements[0].duration.value;
+          const result = json.rows[0].elements[0];
 
-          calculateTotal(options, minutesToDestination);
+          if (result.status === 'ZERO_RESULTS') {
+            document.querySelector('.result').innerHTML = 'No results available with selected mode of transportation';
+          } else {
+            const minutesToDestination = json.rows[0].elements[0].duration.value;
+
+            calculateTotal(options, minutesToDestination);
+          }
         }
       });
   }

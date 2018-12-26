@@ -45,7 +45,7 @@
   }
 
   var calculateTime = function(options) {
-    fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${options[0]}&destinations=${options[1]}&mode=${options[2]}&key=AIzaSyCJpw-LH82RevpaarbB3PW4qoWEAR9xauU`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${options[0]}&destinations=${options[1]}&mode=${options[2]}&key=AIzaSyCJpw-LH82RevpaarbB3PW4qoWEAR9xauU`)
       .then((res) => {
         return res.json();
       })
